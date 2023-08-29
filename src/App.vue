@@ -4,12 +4,16 @@
 <template>
   <div>
     <Container>
-      <div>11</div>
+      <Header />
     </Container>
 
-    <Header />
-    <router-view />
-    <Footer />
+    <Container :backgroun="{ background: 'green' }">
+      <router-view />
+    </Container>
+
+    <Container>
+      <Footer />
+    </Container>
   </div>
 </template>
 
@@ -19,10 +23,16 @@ import Footer from "./components/Footer.vue";
 import Container from "./components/Container.vue";
 
 export default {
+  data: () => ({}),
   components: {
     Header,
     Footer,
     Container,
+  },
+  computed: {
+    styles: () => ({
+      background: "green",
+    }),
   },
 };
 </script>
